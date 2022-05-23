@@ -1,0 +1,44 @@
+[2022-05-21 12:41:13,521] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: backup_all_db.load_csv_to_new_db scheduled__2022-05-19T00:00:00+00:00 [queued]>
+[2022-05-21 12:41:13,527] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: backup_all_db.load_csv_to_new_db scheduled__2022-05-19T00:00:00+00:00 [queued]>
+[2022-05-21 12:41:13,528] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-21 12:41:13,528] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-05-21 12:41:13,528] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-21 12:41:13,545] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): load_csv_to_new_db> on 2022-05-19 00:00:00+00:00
+[2022-05-21 12:41:13,549] {standard_task_runner.py:52} INFO - Started process 11405 to run task
+[2022-05-21 12:41:13,553] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'backup_all_db', 'load_csv_to_new_db', 'scheduled__2022-05-19T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/my_first_dags.py', '--cfg-path', '/tmp/tmpvwqwq8rn', '--error-file', '/tmp/tmpgy5qvdcn']
+[2022-05-21 12:41:13,554] {standard_task_runner.py:80} INFO - Job 4: Subtask load_csv_to_new_db
+[2022-05-21 12:41:13,605] {task_command.py:369} INFO - Running <TaskInstance: backup_all_db.load_csv_to_new_db scheduled__2022-05-19T00:00:00+00:00 [running]> on host homerim-desktop
+[2022-05-21 12:41:13,677] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=backup_all_db
+AIRFLOW_CTX_TASK_ID=load_csv_to_new_db
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-19T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-05-19T00:00:00+00:00
+[2022-05-21 12:41:13,679] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-21 12:41:13,679] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 ~/airflow/dags/tasks/load_csv_to_new_db.py']
+[2022-05-21 12:41:13,690] {subprocess.py:85} INFO - Output:
+[2022-05-21 12:41:13,916] {subprocess.py:92} INFO - В новую базу загружен файл orders
+[2022-05-21 12:41:13,916] {subprocess.py:92} INFO - В новую базу загружен файл supplier
+[2022-05-21 12:41:13,916] {subprocess.py:92} INFO - В новую базу загружен файл nation
+[2022-05-21 12:41:13,916] {subprocess.py:92} INFO - В новую базу загружен файл lineitem
+[2022-05-21 12:41:13,916] {subprocess.py:92} INFO - В новую базу загружен файл region
+[2022-05-21 12:41:13,916] {subprocess.py:92} INFO - В новую базу загружен файл customer
+[2022-05-21 12:41:13,916] {subprocess.py:92} INFO - В новую базу загружен файл partsupp
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В новую базу загружен файл part
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - Все данные успешно перенесены!
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице orders находится 0 записей
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице lineitem находится 0 записей
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице nation находится 0 записей
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице region находится 0 записей
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице part находится 0 записей
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице partsupp находится 0 записей
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице supplier находится 0 записей
+[2022-05-21 12:41:13,917] {subprocess.py:92} INFO - В таблице customer находится 0 записей
+[2022-05-21 12:41:13,926] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-05-21 12:41:13,959] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=backup_all_db, task_id=load_csv_to_new_db, execution_date=20220519T000000, start_date=20220521T094113, end_date=20220521T094113
+[2022-05-21 12:41:14,007] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-05-21 12:41:14,035] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
