@@ -1,0 +1,37 @@
+[2022-05-21 12:46:18,966] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: backup_all_db.load_csv_to_new_db scheduled__2022-05-20T00:00:00+00:00 [queued]>
+[2022-05-21 12:46:18,975] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: backup_all_db.load_csv_to_new_db scheduled__2022-05-20T00:00:00+00:00 [queued]>
+[2022-05-21 12:46:18,975] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-21 12:46:18,975] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-05-21 12:46:18,976] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-21 12:46:18,992] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): load_csv_to_new_db> on 2022-05-20 00:00:00+00:00
+[2022-05-21 12:46:18,996] {standard_task_runner.py:52} INFO - Started process 12123 to run task
+[2022-05-21 12:46:19,003] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'backup_all_db', 'load_csv_to_new_db', 'scheduled__2022-05-20T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/my_first_dags.py', '--cfg-path', '/tmp/tmpqr1_ehsm', '--error-file', '/tmp/tmp38bnp_ot']
+[2022-05-21 12:46:19,004] {standard_task_runner.py:80} INFO - Job 6: Subtask load_csv_to_new_db
+[2022-05-21 12:46:19,063] {task_command.py:369} INFO - Running <TaskInstance: backup_all_db.load_csv_to_new_db scheduled__2022-05-20T00:00:00+00:00 [running]> on host homerim-desktop
+[2022-05-21 12:46:19,128] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=backup_all_db
+AIRFLOW_CTX_TASK_ID=load_csv_to_new_db
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-20T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-05-20T00:00:00+00:00
+[2022-05-21 12:46:19,129] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-21 12:46:19,130] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 ~/airflow/dags/tasks/load_csv_to_new_db.py']
+[2022-05-21 12:46:19,141] {subprocess.py:85} INFO - Output:
+[2022-05-21 12:46:19,447] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-05-21 12:46:19,447] {subprocess.py:92} INFO -   File "/home/home-rim/airflow/dags/tasks/load_csv_to_new_db.py", line 74, in <module>
+[2022-05-21 12:46:19,448] {subprocess.py:92} INFO -     with open(f'/tmp/{table}.csv', 'r') as f:
+[2022-05-21 12:46:19,448] {subprocess.py:92} INFO - FileNotFoundError: [Errno 2] No such file or directory: '/tmp/orders.csv'
+[2022-05-21 12:46:19,475] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-05-21 12:46:19,491] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/home-rim/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 194, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-05-21 12:46:19,494] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=backup_all_db, task_id=load_csv_to_new_db, execution_date=20220520T000000, start_date=20220521T094618, end_date=20220521T094619
+[2022-05-21 12:46:19,510] {standard_task_runner.py:92} ERROR - Failed to execute job 6 for task load_csv_to_new_db (Bash command failed. The command returned a non-zero exit code 1.; 12123)
+[2022-05-21 12:46:19,536] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-05-21 12:46:19,565] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

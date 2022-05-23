@@ -1,0 +1,42 @@
+# Установка:
+pip install apache-airflow
+
+# Указываем папку логов:
+export AIRFLOW_HOME=/home/alex/airflow
+
+# Запускаем (без запуска scheduler в списке дагов airflow будет пусто):
+airflow db init
+airflow webserver -p 8080
+airflow scheduler
+
+# Создаём пользователя:
+airflow users  create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
+
+# удаляем пользователя
+airflow users delete -u admin
+
+# проверяем даги, которые есть:
+airflow dags list
+
+# даги с ошибками
+airflow dags list-import-errors
+
+# удаляет все настройки базы
+airflow db reset
+
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+
+
+#restart docker
+sudo systemctl restart docker.socket docker.service
+
+#Find and delete port and pid
+sudo lsof -i :54320
+sudo kill 20369 20376
+
+#Удалить все Docker контейнеры
+docker rm $(docker ps -a -q)
+
+sudo snap remove --purge docker
+sudo snap remove docker
